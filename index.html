@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+         -webkit-appearance: none;
+         margin: 0;
+        }
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        #number{
+            width: 400px;
+            font-size: 40px;
+            text-align: center;
+            justify-content: center;
+        }
+        #output-container {
+            visibility: none;
+            background: white;
+            padding: 5px;
+            border-radius: 10px;
+            width: 400px;
+        }
+        #button{
+            width: 200px;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Check whether a number is odd or even</h1>
+    <form>
+        <input id="number" type="number" placeholder="Enter a Number" required><br><br>
+        <button id="button" type="button" onclick="mainNumber()">Submit</button><br><br>
+        <div id="output-container">
+            <p id="output"></p>
+        </div>
+    </form>
+    </center>
+    <script>
+        const projectName = "odd or even checker";
+
+        const mainNumber = () => {
+            let number = document.getElementById("number").value;
+
+            var checkNumber = (number % 2 == 0 ? "even" : "odd");
+
+            if(number == ""){
+                document.getElementById("output").innerHTML = "Type a number to check";
+                // document.getElementById("output-container").style.visibility = "none";
+                document.getElementById("output-container").style.background = "#FAD02C";
+            }else{
+                document.getElementById("output").innerHTML = number + " is " + checkNumber;
+                document.getElementById("output-container").style.background = "#53D16E";
+            }
+    }
+    </script>
+</body>
+</html>
